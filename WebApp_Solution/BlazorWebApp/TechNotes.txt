@@ -1,0 +1,13 @@
+
+Created a WebApp_Solution  including a project BlazorWebApp. Everything else keeps default except
+
+1 Added "ENV ASPNETCORE_URLS http://*:5000:" in line 6 at Dockerfile.
+2. Update port mapping for Docker desktop by changing
+   8080:8080 to 8080:80.
+
+Four options to host the Webap below.
+I) BlazorWebApp: http, works fine (hosted by a local development server. For ASP.NET Core applications, 
+                                   this is usually the Kestrel web server, which is built into the .NET Core framework)
+II) BlazorWebApp: https, need certificate, should be hosted by local development server as well.
+III) IIS Express, not installed
+IV) DockFile,Deploy to Docker desktop to run
