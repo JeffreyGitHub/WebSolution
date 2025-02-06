@@ -1,0 +1,42 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+                
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+          
+      - name: Restore dependencies
+        run: dotnet restore WebApp_Solution/WebAPISwagger/WebAPISwagger.csproj
+        
+      - name: Build project
+        run: dotnet build WebApp_Solution/WebAPISwagger/WebAPISwagger.csproj --configuration Release
+        
+      - name: Test
+        run: dotnet test WebApp_Solution/WebAPISwagger/WebAPISwagger.csproj --no-build --verbosity normal
+
+      - name: Publish
+        run: dotnet publish WebApp_Solution/WebAPISwagger/WebAPISwagger.csproj -c Release -o ./publish
+        
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+            app-name: 'WebAPISwagger' # this name defined in Azure
+             #  the variable,AZURE_WEBAPP_PUBLISH_PROFILE, next line is defined in github repository Settings>Security>Secrets and variables>Actions
+            publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }} 
+            package: ./publish
