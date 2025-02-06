@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp.csproj", "{0266B1BB-0A9E-4318-A197-8252D8FF2EDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPISwagger", "WebAPISwagger\WebAPISwagger.csproj", "{CE3612C5-E20F-4265-97DD-91E221AF819A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0266B1BB-0A9E-4318-A197-8252D8FF2EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0266B1BB-0A9E-4318-A197-8252D8FF2EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0266B1BB-0A9E-4318-A197-8252D8FF2EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0266B1BB-0A9E-4318-A197-8252D8FF2EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3612C5-E20F-4265-97DD-91E221AF819A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3612C5-E20F-4265-97DD-91E221AF819A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3612C5-E20F-4265-97DD-91E221AF819A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3612C5-E20F-4265-97DD-91E221AF819A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
